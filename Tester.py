@@ -20,7 +20,7 @@ class Tester:
         self.states = self.sm.getUsedStates()
         self.transitions = self.sm.getUsedTransitions()
         self.gui.clear()
-        self.gui.drawStateMachineOutputLabel(100, 50, "RESULT: " + str(self.accepted))  # DRAW STATE MACHINE OUTPUT
+        self.gui.drawStateMachineOutputLabel(100, 100, "RESULT: " + str(self.accepted))  # DRAW STATE MACHINE OUTPUT
         self.drawStateDiagram()
         return None
 
@@ -80,6 +80,8 @@ class Tester:
         self.gui.drawLabel(dm * 9 + rad + 20, dm * 2 + rad, 'b', self.transitions['I:b'])  # I:b
         self.gui.drawPointhead(dm * 5 + 5, dm * 4 + 10, self.transitions['B:b'])
         self.gui.drawPointhead(dm * 4 - 5, dm * 5 - 10, self.transitions['D:a'])
+
+        self.gui.drawLabel(100,50, "(ab*)*bba(a*|b)*", False)
 
         self.gui.renderGraphics()
 
